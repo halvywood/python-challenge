@@ -72,9 +72,23 @@ with open(csvpath) as csvfile:
 # prints
 print("Financial Analysis")
 print("-------------------------------")
-
 print(f"Total Months:  {months}")
 print(f"Total:  ${total}")
 print(f"Average Change:  ${x}")
 print(f"Greatest Increase in Profits:  {greatest_increase_month}, (${most})")
 print(f"Greatest Decrease in Profits:  {greatest_decrease_month}, (${least})")
+
+# File to write to
+output_file = os.path.join('Resources', 'budget_data_revised.text')
+
+# Open Open Write File
+with open(output_file, 'w',) as txtfile:
+
+# Write New Data
+    txtfile.write(f"Financial Analysis\n")
+    txtfile.write(f"---------------------------\n")
+    txtfile.write(f"Total Months:  {months}\n")
+    txtfile.write(f"Total:  ${total}\n")
+    txtfile.write(f"Average Change:  ${x}\n")
+    txtfile.write(f"Greatest Increase in Profits:  {greatest_increase_month}, (${most})\n")
+    txtfile.write(f"Greatest Decrease in Profits:  {greatest_decrease_month}, (${least})\n")
